@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda ZCPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agenda de Réservation</h1>
+            <div id="days" class="days-container"></div>
+        </header>
+        
+        <main class="calendar-grid">
+            <div id="hours" class="hours-column"></div>
+            <div id="columns" class="columns-container"></div>
+        </main>
+
+        <footer>
+            <div id="selection-info">
+                <span id="selectedInfo">Aucun créneau sélectionné</span>
+            </div>
+            <button id="validateBtn" disabled>Valider la réservation</button>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

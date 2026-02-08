@@ -1,0 +1,141 @@
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.days-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.day {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    min-width: 70px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.day.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.calendar-grid {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+}
+
+.hours-column {
+    width: 60px;
+    border-right: 1px solid var(--border);
+}
+
+.hours-column div {
+    height: 160px; /* 4 slots of 40px */
+    padding-right: 5px;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: -10px;
+}
+
+.columns-container {
+    flex: 1;
+    position: relative;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px);
+    background-size: 100% 40px;
+}
+
+.day-column {
+    height: 100%;
+    position: relative;
+}
+
+.slot {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    background: rgba(37, 99, 235, 0.1);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 0.85rem;
+}
+
+footer {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#selectedInfo {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
